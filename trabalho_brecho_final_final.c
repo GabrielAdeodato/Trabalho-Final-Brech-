@@ -6,19 +6,20 @@
 
 int main () {
 	
-	setlocale(LC_ALL, "Portuguese");
+setlocale(LC_ALL,"");
 	
 	//declação de variáveis
-	char nomeProduto[100], marcaProduto[100];
+	char nomeProduto[100], marcaProduto[100], fornecedor[100];
 	char desconto;
 	char dados;
-	int qntProduto, descontoInvalido, opcaoInvalida, codigoProduto, quantProduto, dia, mes, ano, verificaData, verificaQuantidade;
+	char insereProduto;
+	int inicio, qntProduto, descontoInvalido, opcaoInvalida, codigoProduto, quantProduto, dia, mes, ano, verificaData, verificaQuantidade;
 	float precoProduto, precoVenda, precoDesconto, precoCompra;
 	
 	//requerimento de informações sobre o produto que está sendo adicionado
 	
 	
-	
+
 
 		printf("Digite o produto que está sendo vendido: ");
 		fgets(nomeProduto, 100, stdin);
@@ -27,6 +28,11 @@ int main () {
 		printf("\nDigite a marca do produto: ");
 		fgets(marcaProduto, 100, stdin);
 		marcaProduto[strcspn(marcaProduto, "\n")] = 0;
+		
+		
+		printf("\nDigite o nome do fornecedor: ");
+		fgets(fornecedor, 100, stdin);
+		fornecedor[strcspn(fornecedor, "\n")] = 0;
 		
 		do{
 		
@@ -108,9 +114,12 @@ int main () {
 
 		srand(time(NULL));
 		printf("\n\n************");
-		printf("\n\nO código do produto é: %d", rand() % 10000);
+		printf("\nPRODUTO ADICIONADO COM SUCESSO!!!");	
+		printf("\n\n************");
+		printf("\n\nO código do produto é: %d", rand() % 1000000000);
 		printf("\nNome: %s", nomeProduto);
 		printf("\nMarca: %s", marcaProduto);
+		printf("\nNome fornecedor: %s", fornecedor);
 		printf("\nQuantidade: %d", quantProduto);
 		printf("\nData aquisição: %d/%d/%d", dia, mes, ano);
 		printf("\nPreço da compra (UN): R$%.2f", precoCompra);
@@ -119,7 +128,7 @@ int main () {
 		printf("\nPreço Final (UN): R$%.2f", precoVenda);
 		printf("\n\n************");
 		
-		
+			
 
 		
 	return 0;	
